@@ -25,6 +25,8 @@ for i in range(total_pages):
     vac_json.append(requests.get(url, params=params).json())
 
 # Анализируем полученную информацию
+# Выбираем только те вакансии, в которых указан размер заработной платы в строке 'ОТ'
+# Заработную плату считаем по наименьшей, то есть той что в строке 'ОТ'
 all_salary = 0
 all_vac = 0
 for i in vac_json:
@@ -40,6 +42,7 @@ for i in vac_json:
     all_salary += summ_salary
     all_vac += count_vac
 
+# Рассчитываем средний уровень заработной платы
 average_salary = all_salary//all_vac
 print(f'Средняя заработная плата по запросу Python в Москве: {average_salary} руб.')
 
