@@ -1,5 +1,4 @@
 import requests
-import pprint
 
 url = 'https://api.hh.ru/vacancies'
 
@@ -45,6 +44,3 @@ for i in vac_json:
 # Рассчитываем средний уровень заработной платы
 average_salary = all_salary//all_vac
 print(f'Средняя заработная плата по запросу Python в Москве: {average_salary} руб.')
-
-
-#Cчетчик = 11
